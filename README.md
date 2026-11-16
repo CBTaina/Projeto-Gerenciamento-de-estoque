@@ -1,32 +1,33 @@
-# React + TypeScript + Vite
+# Gerenciador de produtos
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Aplicação React para cadastrar produtos com nome e preço, pesquisar pelo nome e
+excluir produtos cadastrados.
 
-Currently, two official plugins are available:
+## Executar localmente
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```sh
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Testes
+
+Os testes unitários e de componentes usam Vitest e Testing Library:
+
+```sh
+npm test
+```
+
+Os testes ponta a ponta usam Playwright com Chromium. Instale o navegador uma
+vez e execute a suíte:
+
+```sh
+npx playwright install chromium
+npm run test:e2e
+```
+
+Para validar tipos e gerar a versão de produção:
+
+```sh
+npm run build
+```
